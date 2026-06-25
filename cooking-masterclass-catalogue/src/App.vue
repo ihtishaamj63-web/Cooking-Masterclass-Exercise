@@ -44,6 +44,7 @@
         No classes match your current filter.
       </p>
     </main>
+    <FooterComponent />
   </div>
 </template>
 
@@ -51,6 +52,7 @@
 import { ref, computed } from "vue";
 import HeaderComponent from "./components/Header.vue";
 import CourseCard from "./components/CourseCard.vue";
+import FooterComponent from "./components/Footer.vue";
 import { courses } from "./data/courses.js";
 
 export default {
@@ -58,6 +60,7 @@ export default {
   components: {
     HeaderComponent,
     CourseCard,
+    FooterComponent,
   },
   setup() {
     const filter = ref("all");
@@ -93,12 +96,15 @@ body {
 
 #app {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .main-content {
   max-width: 1280px;
   margin: 0 auto;
   padding: 3rem 2rem;
+  flex: 1;
 }
 
 .controls {
